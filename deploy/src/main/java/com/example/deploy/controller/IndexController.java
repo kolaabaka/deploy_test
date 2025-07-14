@@ -20,4 +20,9 @@ public class IndexController {
             </html>
             """;
     }
+
+    @GetMapping("/hello")
+    public String helloHtml(){
+        return "I`m from backend!";
+    }
 }

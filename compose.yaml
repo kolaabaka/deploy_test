@@ -2,4 +2,19 @@ services:
   back:
     build: deploy/.
     ports: 
-      - "8080:8080"
+      - "5000:5000"
+    networks:
+      - default
+
+  front:
+    build: frontend/.
+    ports: 
+      - "80:80"
+    depends_on:
+      - back
+    networks:
+      - default
+
+networks:
+  default:
+    name: existing-network
